@@ -7,7 +7,7 @@ auth = tweepy.OAuthHandler(C_KEY, C_SECRET)
 auth.set_access_token(A_TOKEN, A_TOKEN_SECRET)  
 api = tweepy.API(auth)
 
-opc = 1#randint(1,5)
+opc = randint(1,5)
 
 if(opc == 1):
 	#films
