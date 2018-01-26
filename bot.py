@@ -15,7 +15,7 @@ if(opc == 1):
 		film = swapi.get_film(randint(1,7))
 	except:
 		film = swapi.get_film(1)
-	tweet = "#StarWars\nTitle: "+film.title+"\nDirector: "+film.director+"\nRelease Date: "+film.release_date+"\nOpening Crawl:"
+	tweet = "#StarWars\nFilm\nTitle: "+film.title+"\nDirector: "+film.director+"\nRelease Date: "+film.release_date+"\nOpening Crawl:"
 	if(len(tweet) < 276):
 		ocL = len(film.opening_crawl)
 		tL = len(tweet)
@@ -28,7 +28,7 @@ elif(opc == 2):
 	except:
 		person = swapi.get_person(1)
 	home = person.get_homeworld()
-	tweet = "#StarWars\nName: "+person.name+"\nHeight: "+person.height+"\nMass: "+person.mass+"\nHair Color: "+person.hair_color+"\nSkin Color: "+person.skin_color+"\nEye Color: "+person.eye_color+"\nBirth Year: "+person.birth_year+"\nGender: "+person.gender+"\nHomeworld: "+home.name
+	tweet = "#StarWars\nPerson\nName: "+person.name+"\nHeight: "+person.height+"\nMass: "+person.mass+"\nHair Color: "+person.hair_color+"\nSkin Color: "+person.skin_color+"\nEye Color: "+person.eye_color+"\nBirth Year: "+person.birth_year+"\nGender: "+person.gender+"\nHomeworld: "+home.name
 elif(opc == 3):
 	#planets
 	try:
@@ -42,13 +42,13 @@ elif(opc == 4):
 		starship = swapi.get_starship(randint(1,37))
 	except:
 		starship = swapi.get_starship(10)
-	tweet = "#StarWars\nName: "+starship.name+"\nModel: "+starship.model+"\nManufacturer: "+starship.manufacturer+"\nMax Atmosphering Speed: "+starship.max_atmosphering_speed+"\nStarship Class: "+starship.starship_class+"\nCargo Capacity: "+starship.cargo_capacity
+	tweet = "#StarWars\nStarship\nName: "+starship.name+"\nModel: "+starship.model+"\nManufacturer: "+starship.manufacturer+"\nMax Atmosphering Speed: "+starship.max_atmosphering_speed+"\nStarship Class: "+starship.starship_class+"\nCargo Capacity: "+starship.cargo_capacity
 elif(opc == 5):
 	#vehicles
 	try:
 		vehicle = swapi.get_vehicle(randint(1,39))
 	except:
 		vehicle = swapi.get_vehicle(14)
-	tweet = "#StarWars\nName: "+vehicle.name+"\nModel :"+vehicle.model+"\nManufacturer :"+vehicle.manufacturer+"\nMax Atmosphering Speed: "+vehicle.max_atmosphering_speed+"\nVehicle Class: "+vehicle.vehicle_class+"\nCargo Capacity: "+vehicle.cargo_capacity
+	tweet = "#StarWars\nVehicle\nName: "+vehicle.name+"\nModel :"+vehicle.model+"\nManufacturer :"+vehicle.manufacturer+"\nMax Atmosphering Speed: "+vehicle.max_atmosphering_speed+"\nVehicle Class: "+vehicle.vehicle_class+"\nCargo Capacity: "+vehicle.cargo_capacity
 	
 api.update_status(tweet)
