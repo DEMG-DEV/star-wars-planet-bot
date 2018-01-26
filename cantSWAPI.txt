@@ -1,0 +1,6 @@
+people 87
+planets 61
+starships 37
+vehicles 39
+films 7
+species 37
