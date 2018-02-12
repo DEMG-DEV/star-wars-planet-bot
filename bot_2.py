@@ -1,4 +1,4 @@
-import request
+import requests
 import os
 import urllib.request
 import xkcd
