@@ -67,7 +67,7 @@ try:
 			with open(filename, 'wb') as image:
 				for chunk in request:
 					image.write(chunk)
-			api.update_with_media(filename, status=tweet)
+			api.update_with_media(filename, tweet)
 			os.remove(filename)
 		else:
 			print("Unable to download image")
