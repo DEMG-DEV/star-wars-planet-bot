@@ -11,7 +11,7 @@ auth = tweepy.OAuthHandler(C_KEY, C_SECRET)
 auth.set_access_token(A_TOKEN, A_TOKEN_SECRET)  
 api = tweepy.API(auth)
 
-opc = randint(1,5)
+opc = 6 #randint(1,6)
 
 if(opc == 1):
 	#films
@@ -56,19 +56,23 @@ elif(opc == 5):
 	tweet = "#StarWars\nVehicle\nName: "+vehicle.name+"\nModel :"+vehicle.model+"\nManufacturer :"+vehicle.manufacturer+"\nMax Atmosphering Speed: "+vehicle.max_atmosphering_speed+"\nVehicle Class: "+vehicle.vehicle_class+"\nCargo Capacity: "+vehicle.cargo_capacity
 
 try:
-	comic = xkcd.getLatestComic()
-	url = comic.getImageLink() 
-#	tweet_image(url, tweet)
-	filename = 'temp.jpg'
-	request = requests.get(url, stream=True)
-	if request.status_code == 200:
-		with open(filename, 'wb') as image:
-			for chunk in request:
-				image.write(chunk)
-		api.update_with_media(filename, status=tweet)
-		os.remove(filename)
-	else:
-		print("Unable to download image")
+	if(opc == 6){
+		comic = xkcd.getLatestComic()
+		url = comic.getImageLink() 
+#		tweet_image(url, tweet)
+		filename = 'temp.jpg'
+		request = requests.get(url, stream=True)
+		if request.status_code == 200:
+			with open(filename, 'wb') as image:
+				for chunk in request:
+					image.write(chunk)
+			api.update_with_media(filename, status=tweet)
+			os.remove(filename)
+		else:
+			print("Unable to download image")
+	}else{
+		api.update_status(tweet)
+	}
 except:
 	print("error")
 	traceback.print_exc()
