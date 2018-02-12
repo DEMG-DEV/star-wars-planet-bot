@@ -71,3 +71,4 @@ try:
 		print("Unable to download image")
 except:
 	print("error")
+	traceback.print_exc()
