@@ -59,6 +59,7 @@ try:
 	if(opc == 6):
 		comic = xkcd.getLatestComic()
 		url = comic.getImageLink() 
+		tweet = "New Comic guys"
 #		tweet_image(url, tweet)
 		filename = 'temp.jpg'
 		request = requests.get(url, stream=True)
