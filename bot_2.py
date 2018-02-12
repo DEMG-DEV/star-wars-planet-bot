@@ -57,7 +57,7 @@ elif(opc == 5):
 
 try:
 	if(opc == 6):
-		comic = xkcd.getLatestComic()
+		comic = xkcd.getRandomComic()
 		url = comic.getImageLink() 
 		tweet = "New Comic guys"
 #		tweet_image(url, tweet)
