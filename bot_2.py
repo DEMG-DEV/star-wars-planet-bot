@@ -58,14 +58,14 @@ elif(opc == 5):
 try:
 	comic = xkcd.getLatestComic()
 	url = comic.getImageLink() 
-	tweet_image(url, tweet)
+#	tweet_image(url, tweet)
 	filename = 'temp.jpg'
 	request = requests.get(url, stream=True)
 	if request.status_code == 200:
 		with open(filename, 'wb') as image:
 			for chunk in request:
 				image.write(chunk)
-		api.update_with_media(filename, status=message)
+		api.update_with_media(filename, status=tweet)
 		os.remove(filename)
 	else:
 		print("Unable to download image")
