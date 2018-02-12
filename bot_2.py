@@ -56,7 +56,7 @@ elif(opc == 5):
 	tweet = "#StarWars\nVehicle\nName: "+vehicle.name+"\nModel :"+vehicle.model+"\nManufacturer :"+vehicle.manufacturer+"\nMax Atmosphering Speed: "+vehicle.max_atmosphering_speed+"\nVehicle Class: "+vehicle.vehicle_class+"\nCargo Capacity: "+vehicle.cargo_capacity
 
 try:
-	if(opc == 6){
+	if(opc == 6):
 		comic = xkcd.getLatestComic()
 		url = comic.getImageLink() 
 #		tweet_image(url, tweet)
@@ -70,9 +70,8 @@ try:
 			os.remove(filename)
 		else:
 			print("Unable to download image")
-	}else{
+	else:
 		api.update_status(tweet)
-	}
 except:
 	print("error")
 	traceback.print_exc()
